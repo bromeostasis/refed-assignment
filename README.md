@@ -1,6 +1,7 @@
 # REFed take-home assignment
 
 ***A quick note on git***
+
 Upon reading the assignment, I saw the phrase "Your final submission should be a zipped file directory" and assumed the output should specifically not be a git repository. This was purely a reading error on my part and I deeply regret the missed chance to show you the way I work. I'm happy to talk through my process and prefer using git on all projects I work on.
 
 For some insight into how I usually use git, feel free to browse a personal project of mine, [emojiphone](https://github.com/bromeostasis/emojiphone).
@@ -33,6 +34,7 @@ Any file with the `v2_` prefix includes the updated 2018 & 2019 data from `farm_
 ### How to run
 
 *This project was built using python version `3.7.3`. Please use this version or similar to ensure best results. See future enahcements section below for more details.*
+
 Generating the data and figures is as simple as running the base command:
 
 ```python
@@ -56,6 +58,7 @@ While `python` and `pandas` are very powerful, we don't want to rely on them, es
 We would also want to store the `tons_never_harvested_by_cause` data in a dedicated table so we can easily update these values and have changes propogate throughout our system.
 
 **Hosting**
+
 First and foremost, these calculations would need to more broadly be accessible to other engineers, more robust analytics solutions, and end-users. We would likely want to create a frontend interface where anyone (or anyone with appropriate permissions) could upload their data. To start with, this could be a simple file upload interface, though it could certainly expanded to show a lot of validation or be integrated with the current insights to help ensure that whoever might be submitting the data knows what they're doing and that they're submitting it to the right place.
 
 We would also want to host the visualizations on a frontend server. Visualizations aren't a specialty of mine, so I'm not sure which technology would be best to use here, but we would certainly want the outside world to be able to view all of our work in a dynamic fashion, not just send them a folder of `.png`s!
@@ -80,7 +83,7 @@ For the sake of time, I made several tradeoffs that I would fix down the road. I
 * **Adding virutalenv.** To ensure more consistent execution across different computers, I would use virtualenv.
 * **Friendlier script execution.** For convenience, it'd be nice to have the script take more inputs or be a bit more interactive. We could control things like filenames, output directories, resetting data, and potentially choosing which portions of the assignment to run.
 
-## Misc: assumptions and corrections
+## Miscellaneous: assumptions and corrections
 
 Finally, here are a few assumptions I made and corrections I noticed in the assignment:
 
