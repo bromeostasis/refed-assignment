@@ -20,7 +20,7 @@ Finally, we read in the updated data and repeat the previous steps! We remove du
 
 ### What's included
 
-The solution presented here is mainly run via `main.py`. This script runs all three portions of the assignment and outputs the necessary data and figures into their appropriate directories. All supplementary and utility code is placed in subdirectories in order to maintain code readability. They are present in the `sanitzation`, `analysis`, and `plotting` "packages".
+The solution presented here is mainly run via `main.py`. This script runs all three portions of the assignment and outputs the necessary data and figures into their appropriate directories. All supplementary and utility code is placed in subdirectories in order to maintain code readability. They are present in the `sanitzation/`, `analysis/`, and `plotting/` "packages".
 
 All of the rest of the directories present are for input or output. They are as follows:
 
@@ -30,6 +30,8 @@ All of the rest of the directories present are for input or output. They are as 
 * `figures`: All plots present
 
 Any file with the `v2_` prefix includes the updated 2018 & 2019 data from `farm_update_part_3.csv`.
+
+Finally, I did keep the Jupyter notebook files in the directory/solution. They are fairly messy and disorganized as it's mainly notes and experiments, but feel free to take a look if you'd like!
 
 ### How to run
 
