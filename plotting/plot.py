@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 def autopct_format(values):
     def my_format(pct):
         total = sum(values)
-        val = int(round(pct*total/100.0))
+        val = round(pct*total/100.0, 1)
         return str(val)
     return my_format
 
@@ -32,7 +32,7 @@ def plot_not_harvested_by_cause(df, df_harvest, plot_name):
 
 	for index, row in df_harvest.iterrows():
 		plt.clf()
-		
+
 		labels = data_by_year_and_dept.indices.keys()
 		labels = [f'{str(tuple[0])} ({tuple[1]})' for tuple in labels]
 		plot_data = data_by_year_and_dept.sum()[f'tons_never_harvested_{row.cause}']
