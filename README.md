@@ -1,5 +1,10 @@
 # REFed take-home assignment
 
+***A quick note on git***
+Upon reading the assignment, I saw the phrase "Your final submission should be a zipped file directory" and assumed the output should specifically not be a git repository. This was purely a reading error on my part and I deeply regret the missed chance to show you the way I work. I'm happy to talk through my process and prefer using git on all projects I work on.
+
+For some insight into how I usually use git, feel free to browse a personal project of mine, [emojiphone](https://github.com/bromeostasis/emojiphone).
+
 ## Start here: Project overview and how to run
 
 ### Solution approach
@@ -67,9 +72,20 @@ The current solution does not do much in terms of validating the cleanliness and
 
 ### Future Enhancements
 
-For the sake of time, I made several tradeoffs that I would fix with more time. I've listed them here in rough order of what priority I'd fix/address them in:
+For the sake of time, I made several tradeoffs that I would fix down the road. I've listed them here in rough order of what priority I'd fix/address them in:
 
 * **More efficient calculations.** As previously mentioned, loading all the data into memory and doing calculations via `pandas` is not the most time-efficient. With more time, I'd likely jump straight to storing data in Postgres and doing a lot of the heavy lifting there.
 * **More sophisticated duplication detection.** Upon reviewing the dataset, I noticed that when rows are duplicated, they tend to have all rows exactly the same, including what I've renamed as "index". A more sophisticated solution would likely only check a subset of the columns to distinguish between strict copies and potential updates (a new dataset with the same year/crop, but newer numbers for wasted food)
 * **Blank data detection.** The dataset also did not appear to have any blank data, so I did not implement anything to handle this case, but this is surely we'd run into in ramping up the pipeline.
-* **Friendlier script execution.** For convenience, it'd be nice to have the script take more inputs or be a bit more interactive. We could control things like filenames, output directories, and potentially choosing which portions of the assignment to run.
+* **Adding virutalenv.** To ensure more consistent execution across different computers, I would use virtualenv.
+* **Friendlier script execution.** For convenience, it'd be nice to have the script take more inputs or be a bit more interactive. We could control things like filenames, output directories, resetting data, and potentially choosing which portions of the assignment to run.
+
+## Misc: assumptions and corrections
+
+Finally, here are a few assumptions I made and corrections I noticed in the assignment:
+
+* Floats in the initial dataset were all rounded to the tenths place, so I continued to round all figures to that place.
+* No names were specified for the "cause" columns, so I just went with `tons_never_harvested_<cause>`.
+* In Appendix 1: Calculations, there is a change in a field name from `yields_tons_per_acre` to `yield_tons_per_acre`.
+
+
