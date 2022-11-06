@@ -33,9 +33,9 @@ Generating the data and figures is as simple as running the base command:
 ```python
 python3 main.py
 ```
-Also included is a convenience script, `reset.sh`, to clear out all generated data and figures. If you'd like to fully see the script in action, you may do the following:
+Also included is a convenience script, `reset.py`, to clear out all generated data and figures. If you'd like to fully see the script in action, you may do the following:
 ```python
-. ./reset.sh
+python3 reset.py
 # Verify here that all output directories are empty
 python3 main.py
 ```
