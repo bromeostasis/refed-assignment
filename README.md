@@ -44,7 +44,7 @@ python3 main.py
 ```
 As mentioned in the assignment, I included the final data and figures in the directory.
 
-If you'd like to clear out all of the generated output, I've included is a convenience script: `reset.py`. This will clear out everything except the raw data and can be run like this:
+If you'd like to clear out all of the generated output before running the main script, I've included is a convenience script: `reset.py`. This is not necessary to run the main script (it is idempotent), but will clear out everything except the raw data and can be run like this:
 ```python
 python3 reset.py
 # Verify here that all output directories are empty
@@ -77,12 +77,12 @@ The current solution does not do much in terms of validating the cleanliness and
 
 **Data Access**
 
-Given that "engineers will need to be able to acess this data", it would likely be worth it to implement some sort of data visualization tool. Depending on the SQL knowledge of those accessing the data, we could consider using something like [Tableau](https://www.tableau.com/), [Snowflake](https://www.snowflake.com/en/), or [PowerBI](https://powerbi.microsoft.com/en-us/).
+Given that "engineers will need to be able to acess this data", it would likely be worth it to implement some sort of data access/visualization tool. Depending on the SQL knowledge of those accessing the data, we could consider using something like [Tableau](https://www.tableau.com/), [Snowflake](https://www.snowflake.com/en/), or [PowerBI](https://powerbi.microsoft.com/en-us/).
 
 
 ### Future Enhancements
 
-For the sake of time, I made several tradeoffs that I would fix down the road. I've listed them here in rough order of what priority I'd fix/address them in:
+For the sake of time, I made several tradeoffs that I would fix down the road. I've listed them here in order of what priority I'd fix/address them in:
 
 * **More efficient calculations.** As previously mentioned, loading all the data into memory and doing calculations via `pandas` is not the most time-efficient. I also re-load the same data from a csv multiple times. With more time, I'd likely jump straight to storing data in Postgres and doing a lot of the heavy lifting there.
 * **More sophisticated duplication detection.** Upon reviewing the dataset, I noticed that when rows are duplicated, all rows are exactly the same, including what I've renamed as "index". A more sophisticated solution would likely only check a subset of the columns to distinguish between strict copies and potential updates (a new dataset with the same year/crop, but newer numbers for wasted food).
